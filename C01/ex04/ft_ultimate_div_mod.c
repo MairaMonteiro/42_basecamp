@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonteir <mmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/05 18:05:40 by mmonteir          #+#    #+#             */
-/*   Updated: 2021/04/12 02:47:18 by mmonteir         ###   ########.fr       */
+/*   Created: 2021/04/12 12:06:09 by mmonteir          #+#    #+#             */
+/*   Updated: 2021/04/13 14:42:47 by mmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 
-void	ft_is_negative(int i)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	char sign;
+	int temp;
 
-	sign = i >= 0 ? 'P' : 'N';
-	write(1, &sign, 1);
+	temp = *a / *b;
+	*b = *a % *b;
+	*a = temp;
 }

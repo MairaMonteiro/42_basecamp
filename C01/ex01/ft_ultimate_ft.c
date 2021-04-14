@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonteir <mmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/05 18:05:40 by mmonteir          #+#    #+#             */
-/*   Updated: 2021/04/12 02:47:18 by mmonteir         ###   ########.fr       */
+/*   Created: 2021/04/08 18:37:52 by mmonteir          #+#    #+#             */
+/*   Updated: 2021/04/08 19:09:49 by mmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_is_negative(int i)
+void	ft_ultimate_ft(int *********nbr)
 {
-	char sign;
-
-	sign = i >= 0 ? 'P' : 'N';
-	write(1, &sign, 1);
+	*********nbr = 42;
 }

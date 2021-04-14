@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonteir <mmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/05 18:05:40 by mmonteir          #+#    #+#             */
-/*   Updated: 2021/04/12 02:47:18 by mmonteir         ###   ########.fr       */
+/*   Created: 2021/04/13 18:59:30 by mmonteir          #+#    #+#             */
+/*   Updated: 2021/04/13 23:46:59 by mmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_is_negative(int i)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	char sign;
+	int temp;
+	int i;
+	int j;
 
-	sign = i >= 0 ? 'P' : 'N';
-	write(1, &sign, 1);
+	i = 0;
+	j = 0;
+	while (i < size)
+	{
+		while (j < size)
+		{
+			if (tab[j] > tab[j + 1])
+			{
+				temp = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+		j = 0;
+	}
 }

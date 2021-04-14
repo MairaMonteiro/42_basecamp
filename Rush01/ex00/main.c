@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonteir <mmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/05 18:05:40 by mmonteir          #+#    #+#             */
-/*   Updated: 2021/04/12 02:47:18 by mmonteir         ###   ########.fr       */
+/*   Created: 2021/04/10 12:46:00 by clobato-          #+#    #+#             */
+/*   Updated: 2021/04/12 00:34:00 by mmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_is_negative(int i)
+_Bool	ft_validate_input(int arg_count, char *input[]);
+char	*ft_create_game_board(char *input[]);
+//char	ft_clues(char *game_board);
+
+int		main(int argc, char *argv[])
 {
-	char sign;
-
-	sign = i >= 0 ? 'P' : 'N';
-	write(1, &sign, 1);
+	char *pont;
+	_Bool result;
+	
+	result = ft_validate_input(argc, argv);
+	if (result == 0)
+	{
+		return (0);
+	}
+	pont = ft_create_game_board(argv);
+	return (0);
 }

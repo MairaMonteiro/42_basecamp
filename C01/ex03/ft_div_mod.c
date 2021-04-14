@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonteir <mmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/05 18:05:40 by mmonteir          #+#    #+#             */
-/*   Updated: 2021/04/12 02:47:18 by mmonteir         ###   ########.fr       */
+/*   Created: 2021/04/09 14:16:56 by mmonteir          #+#    #+#             */
+/*   Updated: 2021/04/14 01:23:04 by mmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_is_negative(int i)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	char sign;
+	if (b != '0')
+	{
+		*div = a / b;
+		*mod = a % b;
+	}
+}
 
-	sign = i >= 0 ? 'P' : 'N';
-	write(1, &sign, 1);
+int main(void)
+{
+    int a  = 5;
+    int b  = 2;
+    int *div = &a;
+    int *mod = &b;
+
+    ft_div_mod(a, b, div, mod);
+
+    printf("Value of a is : %d", *div);
+    printf("\nValue of b is : %d",*mod);
 }
