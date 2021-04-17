@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonteir <mmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/15 19:47:13 by mmonteir          #+#    #+#             */
-/*   Updated: 2021/04/17 00:42:59 by mmonteir         ###   ########.fr       */
+/*   Created: 2021/04/16 13:01:59 by mmonteir          #+#    #+#             */
+/*   Updated: 2021/04/16 21:47:09 by mmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *str)
+unsigned int	ft_strlen(char *str)
 {
-	int i;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
+		i++;
+	return (i);
+}
+
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+	unsigned int	i;
+
+	i = 0;
+	while ((src[i] != '\0') && (i < size - 1) && (size != 0))
 	{
-		if ((str[i] < 97 || str[i] > 122))
-		{
-			return (0);
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (1);
+	if (size != '\0')
+	{
+		dest[i] = '\0';
+	}
+	return (ft_strlen(src));
 }

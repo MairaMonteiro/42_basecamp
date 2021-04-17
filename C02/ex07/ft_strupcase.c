@@ -6,7 +6,7 @@
 /*   By: mmonteir <mmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 19:46:33 by mmonteir          #+#    #+#             */
-/*   Updated: 2021/04/16 11:04:25 by mmonteir         ###   ########.fr       */
+/*   Updated: 2021/04/16 20:59:48 by mmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strupcase(char *str)
 	while (str[i] != '\0')
 	{
 		var = str[i];
-		if ((var > 96) && (var <= 123))
+		if ((var > 96) && (var < 123))
 		{
 			str[i] = var - 32;
 		}

@@ -6,7 +6,7 @@
 /*   By: mmonteir <mmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 19:25:43 by mmonteir          #+#    #+#             */
-/*   Updated: 2021/04/15 19:26:38 by mmonteir         ###   ########.fr       */
+/*   Updated: 2021/04/17 00:42:55 by mmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ int	ft_str_is_numeric(char *str)
 		}
 		i++;
 	}
-	return(1);
+	return (1);
 }

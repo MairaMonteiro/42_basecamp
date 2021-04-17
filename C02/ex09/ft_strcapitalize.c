@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonteir <mmonteir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/15 19:47:13 by mmonteir          #+#    #+#             */
-/*   Updated: 2021/04/17 00:42:59 by mmonteir         ###   ########.fr       */
+/*   Created: 2021/04/16 11:53:34 by jjonteir          #+#    #+#             */
+/*   Updated: 2021/04/16 17:44:25 by mmonteir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *str)
+char	*ft_strcapitalize(char *str)
 {
-	int i;
+	int		i;
+	int		j;
+	char	var;
 
 	i = 0;
-	while (str[i] != '\0')
+	j = 0;
+	while (str[j] != '\0')
 	{
-		if ((str[i] < 97 || str[i] > 122))
+		var = str[j];
+		if (i == 0 && (var >= 97 && var <= 122))
 		{
-			return (0);
+			str[j] = var - 32;
+			i++;
 		}
-		i++;
+		else if (i > 0 && (var >= 65 && var <= 90))
+			str[j] = var + 32;
+		else if ((var < 48) || (var > 57 && var < 65)
+			|| (var > 90 && var < 97) || (var > 122))
+			i = 0;
+		else
+			i++;
+		j++;
 	}
-	return (1);
+	return (str);
 }
